@@ -15,16 +15,17 @@ public class Interval {
     }
 
     public static void interval(int val) {
-        if (val >= 0 && val < 15) {
-            System.out.println("[0 -14]");
+
+        if (val < 0 || val > 100) {
+            System.out.println("Значение не входит в интервалы");
+        } else if (val < 15) {
+            System.out.println("[0 - 14]");
         } else if (val < 36) {
             System.out.println("[15 - 35]");
         } else if (val < 51) {
             System.out.println("[36 - 50]");
-        } else if (val <= 100) {
-            System.out.println("[51 - 100]");
         } else {
-            System.out.println("Значение не входит в эти интервалы");
+            System.out.println("[51 - 100]");
         }
     }
 }
