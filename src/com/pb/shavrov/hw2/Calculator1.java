@@ -10,7 +10,7 @@ public class Calculator1 {
         System.out.println("Введите действие (/, *, +, -)");
         String sign = scan.next();
         System.out.println("Введите 2 числа");
-        if (scan.hasNextDouble()) {
+        if (scan.hasNextInt()) {
             operand1 = scan.nextInt();
         }
         if (scan.hasNextInt()) {
