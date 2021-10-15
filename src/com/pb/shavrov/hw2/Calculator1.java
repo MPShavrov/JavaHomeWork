@@ -17,7 +17,7 @@ public class Calculator1 {
             operand2 = scan.nextInt();
             calc(sign, operand1, operand2);
         } else {
-            System.out.println("Извините, но это явно не число. Перезапустите программу и попробуйте снова!");
+            System.out.println("Извините, но это явно не целое число. Перезапустите программу и попробуйте снова!");
         }
     }
 
