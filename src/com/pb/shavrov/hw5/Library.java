@@ -30,7 +30,5 @@ public class Library {
         reader.returnBook(reader1.getFullName(), 3);
         reader.returnBook(reader2.getFullName(), book1.getTitle(), book2.getTitle(), book3.getTitle());
         reader.returnBook(reader3.getFullName(), book1.toString(), book2.toString(), book3.toString(), book4.toString());
-
     }
-
 }
