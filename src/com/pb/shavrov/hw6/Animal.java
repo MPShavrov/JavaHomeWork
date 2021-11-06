@@ -41,5 +41,18 @@ public class Animal {
     public void setLocation(String location) {
         this.location = location;
     }
+
+    public String getNameAnimal() {
+        return nameAnimal;
+    }
+
+    public void setNameAnimal(String nameAnimal) {
+        this.nameAnimal = nameAnimal;
+    }
+
+    @Override
+    public String toString() {
+        return "Животное " + nameAnimal + "- ест " + food + ", живет в " + location;
+    }
 }
 

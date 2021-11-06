@@ -19,6 +19,8 @@ public class VetСlinic {
         cat.eat();
         dog.eat();
         horse.eat();
+        System.out.println("-------------------------------------------------");
+        veterinarian.treatAnimal(cat, dog, horse);
     }
 
     }

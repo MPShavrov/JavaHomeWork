@@ -30,8 +30,5 @@ public class Horse extends Animal {
         return super.equals(obj);
     }
 
-    @Override
-    public String toString() {
-        return super.toString();
-    }
+
 }
