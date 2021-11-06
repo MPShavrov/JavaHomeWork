@@ -11,21 +11,14 @@ public class VetСlinic {
         Dog dog = new Dog("кость", "будке", "Собака", "Джек");
         Horse horse = new Horse("овес", "конюшне", "Лошадь", "Зорька");
 
-        Object[] animals = {cat, dog, horse};
+        Animal[] animals = {cat, dog, horse};
 
-        cat.sleep();
-        dog.sleep();
-        horse.sleep();
-        System.out.println("---------------------------------------------");
-        cat.makeNoise();
-        dog.makeNoise();
-        horse.makeNoise();
-        System.out.println("----------------------------------------------");
-        cat.eat();
-        dog.eat();
-        horse.eat();
-        System.out.println("-------------------------------------------------");
-
+        for (Animal o : animals){
+            o.sleep();
+            o.eat();
+            o.makeNoise();
+            System.out.println(" -------------------------------------- ");
+        }
 
         Class clazz = Class.forName("com.pb.shavrov.hw6.Veterinarian");
         Constructor constr = clazz.getConstructor(new Class[]{});
@@ -34,7 +27,7 @@ public class VetСlinic {
 
             System.out.println("\nНа прием пришли животные: ");
             for (Object o : animals) {
-                veterinarian.treatAnimal(o);
+                ((Veterinarian) obj).treatAnimal(o);
             }
         }
     }
