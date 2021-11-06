@@ -1,8 +1,13 @@
 package com.pb.shavrov.hw6;
 
+import java.util.Objects;
+
 public class Dog extends Animal{
-    public Dog(String food, String location, String nameAnimal) {
+    private String name;
+
+    public Dog(String food, String location, String nameAnimal, String name) {
         super(food, location, nameAnimal);
+        this.name = name;
     }
 
     public Dog() {
@@ -22,13 +27,29 @@ public class Dog extends Animal{
 
     @Override
     public int hashCode() {
-        return super.hashCode();
+        return Objects.hashCode(name);
     }
 
     @Override
     public boolean equals(Object obj) {
-        return super.equals(obj);
+        if (this == obj) {
+            return true;
+        }
+        if (obj == null) {
+            return false;
+        }
+        if (obj == null || obj.getClass() != getClass()) {
+            return false;
+        }
+        Dog dog = (Dog) obj;
+        if (name != dog.name)
+            return false;
+
+        return name == this.name;
     }
 
-
+    @Override
+    public String toString() {
+        return super.toString();
+    }
 }
