@@ -15,11 +15,11 @@ public class Animal {
     }
 
     public void makeNoise() {
-        System.out.println(nameAnimal + " кушает ");
+        System.out.println(nameAnimal + " произносит звук");
     }
 
     public void eat() {
-        System.out.print(nameAnimal + " кушает ");
+        System.out.print(nameAnimal + " кушает " + food);
     }
 
     public void sleep() {

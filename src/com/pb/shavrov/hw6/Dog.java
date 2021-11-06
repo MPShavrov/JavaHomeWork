@@ -11,11 +11,13 @@ public class Dog extends Animal{
     @Override
     public void makeNoise() {
         super.makeNoise();
+        System.out.println("ГАВ");
     }
 
     @Override
     public void eat() {
         super.eat();
+        System.out.println(" из миски");
     }
 
     @Override
