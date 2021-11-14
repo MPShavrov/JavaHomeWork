@@ -1,11 +1,5 @@
 package com.pb.shavrov.hw7;
 
-import com.pb.shavrov.hw3.Array;
-
-import java.util.Arrays;
-
-import static com.pb.shavrov.hw7.Atelier.dressMan;
-
 public class Atelier {
     public static void main(String[] args) {
 
@@ -15,11 +9,14 @@ public class Atelier {
         dressMan(clothes);
         dressWomen(clothes);
 //******************************************************************************
-        Size[] sizes = Size.values();
+        SizeC[] sizes = SizeC.values();
         System.out.println("Все размеры одежды: ");
-        for(Size size : sizes){
-            System.out.println(size);
+        for (SizeC sizeC : sizes) {
+            System.out.println(sizeC);
         }
+
+        System.out.println(SizeC.XXS.getEuroSize());
+        System.out.println(SizeC.XXS.getDescription());
     }
 
     public static String dressMan(Clothes[] clothes) {
