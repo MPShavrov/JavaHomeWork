@@ -14,5 +14,12 @@ public abstract class Clothes {
         this.price = price;
     }
 
-
+    @Override
+    public String toString() {
+        return "Clothes{" +
+                "color='" + color + '\'' +
+                ", sizw=" + sizw +
+                ", price=" + price +
+                '}';
+    }
 }
