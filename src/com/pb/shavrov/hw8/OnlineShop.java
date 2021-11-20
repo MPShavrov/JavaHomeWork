@@ -3,7 +3,7 @@ package com.pb.shavrov.hw8;
 import com.pb.shavrov.hw8.exception.WrongLoginException;
 import com.pb.shavrov.hw8.exception.WrongPasswordException;
 
-public class mein {
+public class OnlineShop {
 
     public static void main(String[] args) throws WrongLoginException, WrongPasswordException {
         Auth auth = new Auth();
