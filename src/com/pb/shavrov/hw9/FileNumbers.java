@@ -3,7 +3,7 @@ package com.pb.shavrov.hw9;
 import java.io.*;
 
 public class FileNumbers {
-  public static String pathMain = "C:\\Users\\mpsha\\OneDrive\\Desktop\\test_test";
+  public static String pathMain = "C:\\Users\\mpsha\\OneDrive\\Desktop\\test_test\\";
 
     public static void createNumbersFile(int[][] arr, String path) {
         try {
