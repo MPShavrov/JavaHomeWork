@@ -1,4 +1,4 @@
-package com.pb.shavrov.hw11;
+package com.pb.shavrov.hw12;
 
 
 import com.fasterxml.jackson.databind.ObjectMapper;
@@ -12,8 +12,8 @@ import java.nio.file.Files;
 import java.nio.file.Paths;
 import java.util.*;
 
-public class PhoneBook {
-    public static List<Contact> contact = new ArrayList<>();
+public class PhoneBookNew {
+    public static List<ContactNew> contact = new ArrayList<>();
     public static ObjectMapper mapper = new ObjectMapper();
 
     public static void addContactPhoneBook(Scanner scan) {
@@ -37,7 +37,7 @@ public class PhoneBook {
         }
         System.out.println("Введите адрес проживания:");
         String address = scan.nextLine();
-        contact.add(new Contact(name, dateBirth, phones, address));
+        contact.add(new ContactNew(name, dateBirth, phones, address));
     }
     public static void delContactFromPhoneBook(Scanner scan) {
         System.out.println("Введите ФИО для удаления контакта :");
@@ -54,7 +54,7 @@ public class PhoneBook {
         System.out.println("Введите имя для поиска:");
         String name = scan.nextLine();
         String searchContact = null;
-        for (Contact item : contact) {
+        for (ContactNew item : contact) {
             if (Objects.equals(item.getName(), name)) {
                 searchContact = item.toString();
                 break;
@@ -69,24 +69,24 @@ public class PhoneBook {
 
     public static void sortByName(Scanner scan) {
         System.out.println("До:");
-        for (Contact i : contact) {
+        for (ContactNew i : contact) {
             System.out.println(i);
         }
-        contact.sort(Comparator.comparing(Contact::getName));
+        contact.sort(Comparator.comparing(ContactNew::getName));
         System.out.println("После:");
-        for (Contact i : contact) {
+        for (ContactNew i : contact) {
             System.out.println(i);
         }
     }
 
     public static void sortByDate(Scanner scan) {
         System.out.println("До:");
-        for (Contact i : contact) {
+        for (ContactNew i : contact) {
             System.out.println(i);
         }
-        contact.sort(Comparator.comparing(Contact::getDateTime));
+        contact.sort(Comparator.comparing(ContactNew::getDateTime));
         System.out.println("После:");
-        for (Contact i : contact) {
+        for (ContactNew i : contact) {
             System.out.println(i);
         }
     }
@@ -106,7 +106,7 @@ public class PhoneBook {
                 case "1":
                     System.out.println("Введите новую дату рождения:");
                     String newDateBirth = scan.nextLine();
-                    for (Contact item : contact) {
+                    for (ContactNew item : contact) {
                         if (Objects.equals(item.getName(), name)) {
                             item.setDateBirth(newDateBirth);
                             break;
@@ -129,7 +129,7 @@ public class PhoneBook {
                             myCase = false;
                         }
                     }
-                    for (Contact item : contact) {
+                    for (ContactNew item : contact) {
                         if (Objects.equals(item.getName(), name)) {
                             item.setPhone(phones);
                             break;
@@ -139,7 +139,7 @@ public class PhoneBook {
                 case "3":
                     System.out.println("Введите новый адрес:");
                     String newAddress = scan.nextLine();
-                    for (Contact item : contact) {
+                    for (ContactNew item : contact) {
                         if (Objects.equals(item.getName(), name)) {
                             item.setAddres(newAddress);
                             break;
@@ -153,7 +153,7 @@ public class PhoneBook {
                     System.out.println("Неправильный номер меню\n!");
             }
             Date date = new Date();
-            for (Contact item : contact) {
+            for (ContactNew item : contact) {
                 if (Objects.equals(item.getName(), name)) {
                     item.setDateTime(date);
                     break;
@@ -166,7 +166,7 @@ public class PhoneBook {
         mapper.enable(SerializationFeature.INDENT_OUTPUT);
         String json = mapper.writeValueAsString(contact);
 
-        try (Writer writer = new FileWriter("src\\com\\pb\\shavrov\\hw11\\files\\json.txt")) {
+        try (Writer writer = new FileWriter("src\\com\\pb\\shavrov\\hw12\\files\\json.txt")) {
             writer.write(json);
         } catch (Exception exception) {
             System.out.println(exception.getMessage());
@@ -176,8 +176,8 @@ public class PhoneBook {
 
     public static void loadFromFile() throws Exception {
         try {
-            String json = new String(Files.readAllBytes(Paths.get("src\\com\\pb\\shavrov\\hw11\\files\\json.txt")), StandardCharsets.UTF_8);
-            List<Contact> newContacts = mapper.readValue(json, List.class);
+            String json = new String(Files.readAllBytes(Paths.get("src\\com\\pb\\shavrov\\hw12\\files\\json.txt")), StandardCharsets.UTF_8);
+            List<ContactNew> newContacts = mapper.readValue(json, List.class);
             System.out.println(newContacts.toString());
         } catch (Exception exception) {
             System.out.println(exception.getMessage());

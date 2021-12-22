@@ -1,16 +1,16 @@
-package com.pb.shavrov.hw11;
+package com.pb.shavrov.hw12;
 
 import java.util.Date;
 import java.util.List;
 
-public class Contact implements Comparable<Contact> {
+public class ContactNew implements Comparable<ContactNew> {
     private final String name;
     private String dateBirth;
     private List<String> phone;
     private String addres;
     private Date dateTime = new Date();
 
-    public Contact(String name, String dateBirth, List<String> phones, String address) {
+    public ContactNew(String name, String dateBirth, List<String> phones, String address) {
         this.name = name;
         this.dateBirth = dateBirth;
         this.phone = phones;
@@ -37,7 +37,7 @@ public class Contact implements Comparable<Contact> {
         return dateTime;
     }
 
-    public void setDateBirth(String DOB) {
+    public void setDateBirth(String dateBirth) {
         this.dateBirth = dateBirth;
     }
 
@@ -65,7 +65,7 @@ public class Contact implements Comparable<Contact> {
     }
 
     @Override
-    public int compareTo(Contact o) {
+    public int compareTo(ContactNew o) {
         return 0;
     }
 }
