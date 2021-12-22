@@ -39,6 +39,7 @@ public class PhoneBookNew {
         String address = scan.nextLine();
         contact.add(new ContactNew(name, dateBirth, phones, address));
     }
+
     public static void delContactFromPhoneBook(Scanner scan) {
         System.out.println("Введите ФИО для удаления контакта :");
         String name = scan.nextLine();
@@ -106,12 +107,7 @@ public class PhoneBookNew {
                 case "1":
                     System.out.println("Введите новую дату рождения:");
                     String newDateBirth = scan.nextLine();
-                    for (ContactNew item : contact) {
-                        if (Objects.equals(item.getName(), name)) {
-                            item.setDateBirth(newDateBirth);
-                            break;
-                        }
-                    }
+                    contact.stream().filter(item -> Objects.equals(item.getName(), name)).findFirst().ifPresent(item -> item.setDateBirth(newDateBirth));
                     break;
                 case "2":
                     boolean myCase = true;
@@ -129,22 +125,12 @@ public class PhoneBookNew {
                             myCase = false;
                         }
                     }
-                    for (ContactNew item : contact) {
-                        if (Objects.equals(item.getName(), name)) {
-                            item.setPhone(phones);
-                            break;
-                        }
-                    }
+                    contact.stream().filter(item -> Objects.equals(item.getName(), name)).findFirst().ifPresent(item -> item.setPhone(phones));
                     break;
                 case "3":
                     System.out.println("Введите новый адрес:");
                     String newAddress = scan.nextLine();
-                    for (ContactNew item : contact) {
-                        if (Objects.equals(item.getName(), name)) {
-                            item.setAddres(newAddress);
-                            break;
-                        }
-                    }
+                    contact.stream().filter(item -> Objects.equals(item.getName(), name)).findFirst().ifPresent(item -> item.setAddres(newAddress));
                     break;
                 case "4":
                     System.out.println("Пока.");
@@ -153,12 +139,7 @@ public class PhoneBookNew {
                     System.out.println("Неправильный номер меню\n!");
             }
             Date date = new Date();
-            for (ContactNew item : contact) {
-                if (Objects.equals(item.getName(), name)) {
-                    item.setDateTime(date);
-                    break;
-                }
-            }
+            contact.stream().filter(item -> Objects.equals(item.getName(), name)).findFirst().ifPresent(item -> item.setDateTime(date));
         }
     }
 
